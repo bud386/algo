@@ -19,3 +19,33 @@ def solution():
     print(ans)
     print(max(ans))
 solution()
+
+
+N = int(input())
+row_visit = [0] * N     # 순열생성(방문한 row)
+row_col = [0] * N       # 퀸의 위치
+
+def possible(k, col):
+    for i in range(k):
+        # 대각선 확인(x3-x1)/(y3-y1) == 1, (x3-x2)/(y3-y2) == 1 (대각선의 기울기는 1)
+        if k - i == abs(col - row_col[i]):
+            return False
+    return True
+
+def NQueen(k):  # k번째 퀸
+    global cnt
+    if k == N:
+        cnt += 1
+        pass
+    else:
+        for i in range(N):
+            if row_visit[i] or not possible(k, i):
+                continue
+            row_visit[i] = 1
+            row_col[k] = i # k번째 퀸을 k행 i열에 배치
+            NQueen(k+1)
+            row_visit[i] = 0
+
+cnt = 0
+NQueen(0)
+print(cnt)

@@ -34,13 +34,14 @@ else:
     print(-1)
 
 
-
 # if distance[s] != inf 쓰는 이유:
 # 이때, 음의 간선이 존재하기 때문에 간선 (s, e)를 볼 때 먼저 dist[s]가 아직 INF인지 확인을 해야 한다.
-# 구현에 따라서 둘 다 시작점에서 도달 불가능한 정점 s, e가 존재하고 (s, e) 가중치가 음수일 때
+# 구현에 따라서 둘 다 시작점에서 도달 불가능한 정점 s, e가 존재하고 (s, e) 가중치가 음수일 때(시작점에서 도달할 수 없는 정점들)
 # dist[s] = INF, dist[e] = INF-weight 꼴이 나올 수도 있기 때문에.
 
 
+# **정점의 갯수가 V일 때 V-1번인 이유**
+# - https://sodocumentation.net/algorithm/topic/4791/bellman-ford-algorithm
 
 
 
