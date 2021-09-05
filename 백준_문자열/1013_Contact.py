@@ -4,11 +4,9 @@ input = sys.stdin.readline
 for tc in range(int(input())):
     N = input().strip()
 
+# (100 + 1 + | 01)+
 
-
-
-
-
+# 01 or 100 1
 
 
 
